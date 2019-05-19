@@ -7,7 +7,7 @@ import lyricsGetter
 
 
 if __name__ == '__main__':
-    artist = 'Amaral'
+    artist = input('Artist or band: ')
     slug = 'https://www.last.fm/search/albums?q=%s' % artist
     page = requests.get(slug)
     soup = BeautifulSoup(page.text, 'html.parser')
@@ -15,6 +15,7 @@ if __name__ == '__main__':
     # Gets the artist albums
     print('>>> Getting albums')
     albums_raw = soup.find_all('h4', class_='album-result-heading')
+    print('>>> ', len(albums_raw), ' Albums found')
     albums = []
     for album in albums_raw:
         albums.append(' '.join(album.get_text().split()))
