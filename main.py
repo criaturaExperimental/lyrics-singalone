@@ -33,11 +33,6 @@ if __name__ == '__main__':
         for track in album:
             lyrics = lyricsGetter.get_lyrics(artist, track)
             lyricsArray.append(lyrics)
-            # filename = os.path.join(directory, track)
-            # if not os.path.exists(filename):
-            #     with open(filename, 'w') as f:
-            #         f.write(lyrics)
-            #         print('>>>>>>>>> %s saved on folder <<<<<<<<<<<')
 
     print(lyricsArray)
 

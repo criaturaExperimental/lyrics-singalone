@@ -1,3 +1,5 @@
-# Lyrics sing-a-long
+# Lyrics sing-a-long :microphone::musical_note:
 
-A lyrics scraper intended to feed the most voracious machine learning data inputs
+Get all the lyrics of your favourite artist / band in a single text file.
+
+# Instructions
