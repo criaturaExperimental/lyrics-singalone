@@ -4,23 +4,13 @@ import requests
 # Custom imports
 import songsGetter
 import lyricsGetter
+import albumsGetter
 
 
 if __name__ == '__main__':
     artist = input('Artist or band: ')
-    slug = 'https://www.last.fm/search/albums?q=%s' % artist.lower().replace(' ', '+')
-    page = requests.get(slug)
-    soup = BeautifulSoup(page.text, 'html.parser')
+    albums = albumsGetter.get_album(artist)
 
-    # Gets the artist albums
-    print('>>> Getting albums')
-    albums_raw = soup.find_all('h4', class_='album-result-heading')
-    print('>>> ', len(albums_raw), ' Albums found')
-    albums = []
-    for album in albums_raw:
-        albums.append(' '.join(album.get_text().split()))
-
-    print(albums)
     # Gets the album song titles
     print('>>> Getting tracks')
     songs_raw = []
