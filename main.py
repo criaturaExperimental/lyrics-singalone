@@ -8,7 +8,7 @@ import lyricsGetter
 
 if __name__ == '__main__':
     artist = input('Artist or band: ')
-    slug = 'https://www.last.fm/search/albums?q=%s' % artist
+    slug = 'https://www.last.fm/search/albums?q=%s' % artist.lower().replace(' ', '+')
     page = requests.get(slug)
     soup = BeautifulSoup(page.text, 'html.parser')
 
