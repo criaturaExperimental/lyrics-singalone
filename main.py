@@ -1,6 +1,3 @@
-from bs4 import BeautifulSoup
-import requests
-
 # Custom imports
 import songsGetter
 import lyricsGetter
